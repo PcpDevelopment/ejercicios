@@ -12,7 +12,7 @@ namespace ConsoleApp1
         String entrada;
         Diccionario oDiccionario = new Diccionario();
 
-        public void Valores()
+        public void LLamadaDiccionario()
         {
             oDiccionario.llenarDiccionario("antipersona", "Dicho de una mina: Preparada para, al ser pisada, matar o mutilar a una persona.");
             oDiccionario.llenarDiccionario("deportivo", "zapatillas de deporte.");

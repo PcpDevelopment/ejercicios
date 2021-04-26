@@ -14,7 +14,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             oMostrarPro.llamadaPromedioEstudiantes();
-            oMostrarDic.Valores();
+            oMostrarDic.LLamadaDiccionario();
         }               
     }
 }
