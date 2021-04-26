@@ -9,14 +9,12 @@ namespace ConsoleApp1
 {
     class Program
     {
-        static LinkMostrar oMostrar = new LinkMostrar();
+        static LinkMostrarPromedios oMostrarPro = new LinkMostrarPromedios();
+        static LinkMostrarDiccionario oMostrarDic = new LinkMostrarDiccionario();
         static void Main(string[] args)
         {
-            oMostrar.llamadaPromedioEstudiantes();
-            
-        }
-
-        
-
+            oMostrarPro.llamadaPromedioEstudiantes();
+            oMostrarDic.Valores();
+        }               
     }
 }

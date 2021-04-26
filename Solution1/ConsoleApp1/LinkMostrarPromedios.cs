@@ -7,7 +7,7 @@ using BLL;
 
 namespace ConsoleApp1
 {
-    public class LinkMostrar
+    public class LinkMostrarPromedios
     {
         PromedioEstudiantes oPromedioEstudiantes = new PromedioEstudiantes();
 

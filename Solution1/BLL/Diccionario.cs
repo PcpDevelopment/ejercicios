@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    class Diccionario
+    public class Diccionario
     {
+        string key, value;
+        public Dictionary<String, String> miDiccionario = new Dictionary<string, string>();
 
+
+        public void llenarDiccionario (String clave, String valor)
+        {
+            miDiccionario.Add(key = clave, value = valor);
+        }
+
+       
     }
 }
