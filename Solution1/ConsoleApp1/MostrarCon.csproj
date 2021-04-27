@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="linkAtencionAlCliente.cs" />
+    <Compile Include="LinkGastosDelMes.cs" />
     <Compile Include="LinkMostrarDiccionario.cs" />
     <Compile Include="LinkMostrarPromedios.cs" />
     <Compile Include="Program.cs" />
