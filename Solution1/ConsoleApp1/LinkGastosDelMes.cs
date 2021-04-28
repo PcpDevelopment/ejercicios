@@ -40,7 +40,7 @@ namespace ConsoleApp1
                 Console.WriteLine("fecha: " + item.dia + " /dia: " + item.DiaDeLaSemana + "/ Monto: " + item.gasto);
             }
         }
-       
+   
         public void Organizando_MostrandoGastosPorMonto()
         {
             Console.WriteLine();
@@ -50,7 +50,6 @@ namespace ConsoleApp1
                 Console.WriteLine("fecha: " + item.dia + "/ dia: " + item.DiaDeLaSemana + "/ Monto: " + item.gasto);
             }
         }
-
         public void MostrarSuma()
         {
             Console.WriteLine();

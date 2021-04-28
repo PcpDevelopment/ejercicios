@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgendaTelefonica.cs" />
     <Compile Include="AtencionAlCliente.cs" />
     <Compile Include="Diccionario.cs" />
     <Compile Include="GastosDelMes.cs" />
