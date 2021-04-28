@@ -8,13 +8,14 @@ namespace BLL
 {
     public class AgendaTelefonica
     {
-        
-        public Dictionary<String, String> agendaTel = new Dictionary<String, String>();
+        public string nombre;
+        public string telefono;
+        public List<AgendaTelefonica> ListaAgendaTelefonica = new List<AgendaTelefonica>();
 
 
-        public void llenarAgenda(String numTel, String nom )
+        public void llenarAgendaTelefonica(string nom, string tel)
         {
-            agendaTel.Add(numTel,nom );
+            ListaAgendaTelefonica.Add(new AgendaTelefonica { nombre = nom, telefono = tel  });
         }
     }
 }

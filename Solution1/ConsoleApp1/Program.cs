@@ -9,6 +9,8 @@ namespace ConsoleApp1
 {
     class Program
     {
+        static List<Program> prueba = new List<Program>();
+        string nombre, telefono;
         static LinkMostrarPromedios oMostrarPro = new LinkMostrarPromedios();
         static LinkMostrarDiccionario oMostrarDic = new LinkMostrarDiccionario();
         static linkAtencionAlCliente oMostrarCliente = new linkAtencionAlCliente();
@@ -25,9 +27,11 @@ namespace ConsoleApp1
             //oMostrarGastosDelMes.MostrarSuma();
             oAgendaTelefonica.llenarAgendaTelefononica();
             oAgendaTelefonica.VerificarAgendaTelefonica();
-           
 
             
+
+
+
         }               
     }
 }
