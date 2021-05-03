@@ -20,13 +20,13 @@ namespace ConsoleApp1
         {
             //oMostrarPro.llamadaPromedioEstudiantes();
             //oMostrarDic.LLamadaDiccionario();
-            //oMostrarCliente.llenandoListaClientes();
-            //oMostrarGastosDelMes.llenandooListaGastoMes();
-            //oMostrarGastosDelMes.OrgnizandoYmostrandoGastosPorDia();
-            //oMostrarGastosDelMes.Organizando_MostrandoGastosPorMonto();
-            //oMostrarGastosDelMes.MostrarSuma();
-            oAgendaTelefonica.llenarAgendaTelefononica();
-            oAgendaTelefonica.VerificarAgendaTelefonica();
+            oMostrarCliente.llenandoListaClientes();
+            /*oMostrarGastosDelMes.llenandooListaGastoMes();
+            oMostrarGastosDelMes.OrgnizandoYmostrandoGastosPorDia();
+            oMostrarGastosDelMes.Organizando_MostrandoGastosPorMonto();
+            oMostrarGastosDelMes.MostrarSuma();*/
+            //oAgendaTelefonica.llenarAgendaTelefononica();
+            //oAgendaTelefonica.VerificarAgendaTelefonica();
 
             
 

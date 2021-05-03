@@ -10,7 +10,6 @@ namespace ConsoleApp1
     class linkAtencionAlCliente
     {
         AtencionAlCliente oAtencionAlCliente = new AtencionAlCliente();
-
         public void llenandoListaClientes()
         {
             oAtencionAlCliente.llenarListaClientes("carlos");
@@ -32,14 +31,13 @@ namespace ConsoleApp1
                     {
                         Console.WriteLine("pulsa enter para pasar al proximo cliente");
                         Console.ReadLine();
-                    }                                                 
-                                    
+                    }     
                 }
                 Console.WriteLine("no quedan mas clientes en la cola");
             }
             catch (Exception e)
             {
-                Console.WriteLine("no quedan mas clientes en la cola");
+                
             }
 
         }

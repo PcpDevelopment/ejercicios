@@ -16,6 +16,7 @@ namespace BLL
         float sumar;
 
         public List<PromedioEstudiantes> listaEstudiantes = new List<PromedioEstudiantes>();
+        public List<PromedioEstudiantes> listaOrdenada = new List<PromedioEstudiantes>();
 
 
         public void llenarLista(String nom, int notas )
@@ -35,11 +36,13 @@ namespace BLL
         {            
             IEnumerable<PromedioEstudiantes> lis = listaEstudiantes.AsQueryable().OrderByDescending(listaEstudiantes => listaEstudiantes.notasEstudiantes);
             listaEstudiantes = lis.ToList();
+            listaOrdenada = lis.ToList();
         }
         public void CalificacionMenor()
         {
             IEnumerable<PromedioEstudiantes> lis = listaEstudiantes.AsQueryable().OrderBy(listaEstudiantes => listaEstudiantes.notasEstudiantes);
             listaEstudiantes = lis.ToList();
+            listaOrdenada = lis.ToList();
         }
 
 
