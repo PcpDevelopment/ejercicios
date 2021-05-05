@@ -8,7 +8,7 @@ namespace BLL
 {
     public class AtencionAlCliente
     {
-       String clientes;
+       public String clientes;
        public  Queue<String> ListaCliente = new Queue<string>();
 
         public void llenarListaClientes(String cliente)
@@ -16,10 +16,7 @@ namespace BLL
             ListaCliente.Enqueue(clientes = cliente);
         }
 
-        public void OrdenClientes()
-        {
-            
-        }
+        
 
     }
 }

@@ -9,33 +9,32 @@ namespace ConsoleApp1
 {
     class LinkGastosDelMes
     {
-        GastosDelMes oGastosDelMEs = new GastosDelMes();
+        GastosDelMes oGastosDelMes = new GastosDelMes();
 
         public void llenandooListaGastoMes()
         {
-            oGastosDelMEs.llenarListaGastosMes(1, 500, "lunes");
-            oGastosDelMEs.llenarListaGastosMes(2, 300, "martes");
-            oGastosDelMEs.llenarListaGastosMes(3, 700, "miercoles");
-            oGastosDelMEs.llenarListaGastosMes(4, 150, "jueves");
-            oGastosDelMEs.llenarListaGastosMes(5, 225, "viernes");
-            oGastosDelMEs.llenarListaGastosMes(6, 621, "sabado");
-            oGastosDelMEs.llenarListaGastosMes(7, 952, "domingo");
-            oGastosDelMEs.llenarListaGastosMes(8, 115, "lunes");
-            oGastosDelMEs.llenarListaGastosMes(9, 325, "martes");
-            oGastosDelMEs.llenarListaGastosMes(10, 987, "miercoles");
-            oGastosDelMEs.llenarListaGastosMes(11, 1021, "sabado");
-            oGastosDelMEs.llenarListaGastosMes(12, 981, "domingo");
-            oGastosDelMEs.llenarListaGastosMes(13, 186, "lunes");
-            oGastosDelMEs.llenarListaGastosMes(14, 342, "martes");
-            oGastosDelMEs.llenarListaGastosMes(15, 901, "miercoles");
-            oGastosDelMEs.sumar();
+            oGastosDelMes.llenarListaGastosMes(1, 500, "lunes");
+            oGastosDelMes.llenarListaGastosMes(2, 860, "martes");
+            oGastosDelMes.llenarListaGastosMes(3, 700, "miercoles");
+            oGastosDelMes.llenarListaGastosMes(4, 150, "jueves");
+            oGastosDelMes.llenarListaGastosMes(5, 225, "viernes");
+            oGastosDelMes.llenarListaGastosMes(6, 621, "sabado");
+            oGastosDelMes.llenarListaGastosMes(7, 952, "domingo");
+            oGastosDelMes.llenarListaGastosMes(8, 115, "lunes");
+            oGastosDelMes.llenarListaGastosMes(9, 325, "martes");
+            oGastosDelMes.llenarListaGastosMes(10, 987, "miercoles");
+            oGastosDelMes.llenarListaGastosMes(11, 1021, "sabado");
+            oGastosDelMes.llenarListaGastosMes(12, 981, "domingo");
+            oGastosDelMes.llenarListaGastosMes(13, 186, "lunes");
+            oGastosDelMes.llenarListaGastosMes(14, 342, "martes");
+            oGastosDelMes.llenarListaGastosMes(15, 901, "miercoles");
         }
 
         public void OrgnizandoYmostrandoGastosPorDia()
         {
-            oGastosDelMEs.OrganizarListaPorDias();
+            oGastosDelMes.OrganizarListaPorDias();
 
-            foreach(GastosDelMes item in oGastosDelMEs.ListaGastosMes)
+            foreach(GastosDelMes item in oGastosDelMes.ListaGastosMes)
             {
                 Console.WriteLine("fecha: " + item.dia + " /dia: " + item.DiaDeLaSemana + "/ Monto: " + item.gasto);
             }
@@ -44,8 +43,8 @@ namespace ConsoleApp1
         public void Organizando_MostrandoGastosPorMonto()
         {
             Console.WriteLine();
-            oGastosDelMEs.OrganizarPorGastos();
-            foreach (GastosDelMes item in oGastosDelMEs.ListaGastosMes)
+            oGastosDelMes.OrganizarPorGastos();
+            foreach (GastosDelMes item in oGastosDelMes.ListaGastosMes)
             {
                 Console.WriteLine("fecha: " + item.dia + "/ dia: " + item.DiaDeLaSemana + "/ Monto: " + item.gasto);
             }
@@ -53,7 +52,7 @@ namespace ConsoleApp1
         public void MostrarSuma()
         {
             Console.WriteLine();
-            Console.WriteLine("la suma total de todo es: " + oGastosDelMEs.sumaDeTodo);
+            Console.WriteLine("la suma total de todo es: " + oGastosDelMes.sumaDeTodo);
         }
         
     }

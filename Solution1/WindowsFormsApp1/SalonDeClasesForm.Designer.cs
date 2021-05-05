@@ -67,6 +67,7 @@ namespace WindowsFormsApp1
             this.listVEstud.UseCompatibleStateImageBehavior = false;
             this.listVEstud.View = System.Windows.Forms.View.Details;
             this.listVEstud.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listVEstud_ColumnClick);
+            this.listVEstud.SelectedIndexChanged += new System.EventHandler(this.listVEstud_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -93,24 +94,26 @@ namespace WindowsFormsApp1
             // 
             // btnAgregarEstudiantes
             // 
-            this.btnAgregarEstudiantes.Location = new System.Drawing.Point(12, 153);
+            this.btnAgregarEstudiantes.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAgregarEstudiantes.ForeColor = System.Drawing.Color.Aqua;
+            this.btnAgregarEstudiantes.Location = new System.Drawing.Point(12, 135);
             this.btnAgregarEstudiantes.Name = "btnAgregarEstudiantes";
-            this.btnAgregarEstudiantes.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarEstudiantes.Size = new System.Drawing.Size(75, 45);
             this.btnAgregarEstudiantes.TabIndex = 2;
             this.btnAgregarEstudiantes.Text = "agregar";
-            this.btnAgregarEstudiantes.UseVisualStyleBackColor = true;
+            this.btnAgregarEstudiantes.UseVisualStyleBackColor = false;
             this.btnAgregarEstudiantes.Click += new System.EventHandler(this.btnAgregarEstudiantes_Click);
             // 
             // txtEstud
             // 
-            this.txtEstud.Location = new System.Drawing.Point(3, 65);
+            this.txtEstud.Location = new System.Drawing.Point(3, 41);
             this.txtEstud.Name = "txtEstud";
             this.txtEstud.Size = new System.Drawing.Size(100, 20);
             this.txtEstud.TabIndex = 3;
             // 
             // txtNotasEst
             // 
-            this.txtNotasEst.Location = new System.Drawing.Point(3, 104);
+            this.txtNotasEst.Location = new System.Drawing.Point(3, 80);
             this.txtNotasEst.Name = "txtNotasEst";
             this.txtNotasEst.Size = new System.Drawing.Size(100, 20);
             this.txtNotasEst.TabIndex = 4;
@@ -118,7 +121,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 46);
+            this.label2.Location = new System.Drawing.Point(31, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 7;
@@ -127,7 +130,7 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 88);
+            this.label3.Location = new System.Drawing.Point(38, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 8;
@@ -137,7 +140,7 @@ namespace WindowsFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(574, 285);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -146,9 +149,11 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.btnAgregarEstudiantes);
             this.Controls.Add(this.listVEstud);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SalonDeClasesForm";
             this.Text = "SalonDeClases";
+            this.Load += new System.EventHandler(this.SalonDeClasesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

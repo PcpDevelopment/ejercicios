@@ -31,15 +31,13 @@ namespace WindowsFormsApp1
             oDiccionario.llenarDiccionario("sinóptico", "Que presenta las partes principales de un asunto de manera clara, rápida y resumida");
             oDiccionario.llenarDiccionario("acciacos", "juegos que cada tres años se realizaban en Roma ");
             oDiccionario.llenarDiccionario("tuitear", "comunicarse por medio de tuits (en la red social Twitter)");
-            //Lbdic.BeginUpdate();
-            foreach (var item in oDiccionario.miDiccionario)
+            
+            foreach (var item in oDiccionario.miDiccionario.OrderBy(x => x.Key))
             {
                 Lbdic.Items.Add(item.Key);
                 
-            }
+            }           
             
-            //Lbdic.EndUpdate();
-
         }
 
         private void Lbdic_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,6 +46,11 @@ namespace WindowsFormsApp1
             TBdef.Text = oDiccionario.miDiccionario[itemSelec];
 
             
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,8 +47,7 @@ namespace WindowsFormsApp1
                 i.SubItems.Add(oPromedioEstudiantes.listaEstudiantes[0].notasEstudiantes.ToString());
 
                 listVEstud.Items.Add(i);
-
-                
+                                
                 oPromedioEstudiantes.listaEstudiantes.Clear();
                 txtEstud.Clear();
                 txtNotasEst.Clear();
@@ -85,8 +84,7 @@ namespace WindowsFormsApp1
             if (listVEstud.Columns[colIndex].Text == "Ordenar▼")
             {
                 listVEstud.Items.Clear();
-
-                enu = from num in comparar orderby num.not descending select num;
+                                
                 foreach (var item in enus)
                 {
                     ListViewItem yo = new ListViewItem(item.estu, 0);
@@ -98,6 +96,15 @@ namespace WindowsFormsApp1
             }
 
         }
-        
+
+        private void listVEstud_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SalonDeClasesForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

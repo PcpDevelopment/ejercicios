@@ -8,7 +8,7 @@ namespace BLL
 {
     public class GastosDelMes
     {
-        public int dia, gasto;
+        public int gasto, dia;
         public String DiaDeLaSemana;
         public int sumaDeTodo = 0;
         public List<GastosDelMes> ListaGastosMes = new List<GastosDelMes>();

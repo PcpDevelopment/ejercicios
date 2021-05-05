@@ -74,11 +74,13 @@ namespace WindowsFormsApp1
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Palabras";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // DiccionarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(509, 262);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
