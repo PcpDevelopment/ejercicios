@@ -22,26 +22,40 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             String nom = TbNombre.Text;
-            string tel = TbTel.Text;           
-            
-            oAgenda.llenarAgendaTelefonica(nom, tel);
-                        
-            if(String.IsNullOrEmpty(nom) || String.IsNullOrEmpty(tel))
-            {
-                MessageBox.Show("faltan datos");
-            }
-            else
-            {
-                LbAgenda.Items.Add(oAgenda.ListaAgendaTelefonica[contador].nombre);
-                TbNombre.Clear();
-                TbTel.Clear();
-            }
+            string tel = TbTel.Text;
+            int digitos;
 
-            if (!String.IsNullOrEmpty(tbMostrarTel.Text))
+            try
             {
-                tbMostrarTel.Clear();
-            }     
+                if (!String.IsNullOrEmpty(nom) && !String.IsNullOrEmpty(tel))
+                {                   
+                    if (int.TryParse(TbTel.Text, out digitos))
+                    {
+                        oAgenda.llenarAgendaTelefonica(nom, digitos.ToString());
+                        LbAgenda.Items.Add(oAgenda.ListaAgendaTelefonica[contador].nombre);
+                        TbNombre.Clear();
+                        TbTel.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("solo se pueden digitar numeros");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("faltan datos");
+                }
 
+                if (!String.IsNullOrEmpty(tbMostrarTel.Text))
+                {
+                    tbMostrarTel.Clear();
+                }
+            }
+            catch(Exception i)
+            {
+
+            }                        
+           
             contador = oAgenda.ListaAgendaTelefonica.Count();           
         }
         private void LbAgenda_SelectedIndexChanged(object sender, EventArgs e)

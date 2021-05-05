@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
     public partial class SalonDeClasesForm : Form
     {        
         string estudiantes;
-        int notas;
+        string  notas;
         float promedio;
         float suma;
         string estu;
@@ -28,36 +28,55 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             listVEstud.View = View.Details;
-
         }
         private void btnAgregarEstudiantes_Click(object sender, EventArgs e)
-        {
+        {            
+
             try
             {
                 contador++;
                 estudiantes = txtEstud.Text;
-                notas = int.Parse(txtNotasEst.Text);
-                oPromedioEstudiantes.llenarLista(estudiantes, notas);
-                suma = suma + notas;
-                promedio = suma / contador;
-                comparar.Add(new SalonDeClasesForm { estu = estudiantes, not = notas });
+                notas = txtNotasEst.Text;
 
-                ListViewItem i = new ListViewItem(oPromedioEstudiantes.listaEstudiantes[0].nombreEstudiantes, 0);
+                if (!String.IsNullOrEmpty(estudiantes) && !String.IsNullOrEmpty(notas.ToString()))
+                {                   
+                    int digitos;
 
-                i.SubItems.Add(oPromedioEstudiantes.listaEstudiantes[0].notasEstudiantes.ToString());
+                    if (int.TryParse(txtNotasEst.Text, out digitos))
+                    {
+                        
+                        oPromedioEstudiantes.llenarLista(estudiantes, digitos);
+                        suma = suma + int.Parse(notas);
+                        promedio = suma / contador;
+                        comparar.Add(new SalonDeClasesForm { estu = estudiantes, not = digitos });
+                        ListViewItem i = new ListViewItem(oPromedioEstudiantes.listaEstudiantes[0].nombreEstudiantes, 0);
 
-                listVEstud.Items.Add(i);
-                                
-                oPromedioEstudiantes.listaEstudiantes.Clear();
-                txtEstud.Clear();
-                txtNotasEst.Clear();
-                label1.Text = String.Format("{0:0.0 }", promedio);
+                        i.SubItems.Add(oPromedioEstudiantes.listaEstudiantes[0].notasEstudiantes.ToString());
+
+                        listVEstud.Items.Add(i);
+                        oPromedioEstudiantes.listaEstudiantes.Clear();
+                        txtEstud.Clear();
+                        txtNotasEst.Clear();
+                        label1.Text = String.Format("{0:0.0 }", promedio);
+                    }
+                    else
+                    {
+                        MessageBox.Show("solo se pueden digitar numeros");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("hay campos vacios");
+                }                          
+ 
             }
-            catch(Exception v)
+            catch(Exception o)
             {
-                MessageBox.Show("los campos estan vacios");
-            }       
-                     
+               
+            }
+
+           
+
         }
         private void listVEstud_ColumnClick(object sender, ColumnClickEventArgs e)
         {
