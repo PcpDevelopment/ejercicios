@@ -24,10 +24,8 @@ namespace WindowsFormsApp1
             String nom = TbNombre.Text;
             string tel = TbTel.Text;
             int digitos;
-
-            try
-            {
-                if (!String.IsNullOrEmpty(nom) && !String.IsNullOrEmpty(tel))
+           
+                if (!String.IsNullOrWhiteSpace(nom) && !String.IsNullOrWhiteSpace(tel))
                 {                   
                     if (int.TryParse(TbTel.Text, out digitos))
                     {
@@ -38,7 +36,7 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        MessageBox.Show("solo se pueden digitar numeros");
+                        MessageBox.Show("solo se pueden digitar numeros en la casilla de telefono");
                     }
                 }
                 else
@@ -49,13 +47,8 @@ namespace WindowsFormsApp1
                 if (!String.IsNullOrEmpty(tbMostrarTel.Text))
                 {
                     tbMostrarTel.Clear();
-                }
-            }
-            catch(Exception i)
-            {
-
-            }                        
-           
+                }           
+            
             contador = oAgenda.ListaAgendaTelefonica.Count();           
         }
         private void LbAgenda_SelectedIndexChanged(object sender, EventArgs e)

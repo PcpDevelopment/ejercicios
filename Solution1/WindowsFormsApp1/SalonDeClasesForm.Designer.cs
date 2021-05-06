@@ -67,7 +67,6 @@ namespace WindowsFormsApp1
             this.listVEstud.UseCompatibleStateImageBehavior = false;
             this.listVEstud.View = System.Windows.Forms.View.Details;
             this.listVEstud.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listVEstud_ColumnClick);
-            this.listVEstud.SelectedIndexChanged += new System.EventHandler(this.listVEstud_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -153,7 +152,6 @@ namespace WindowsFormsApp1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SalonDeClasesForm";
             this.Text = "SalonDeClases";
-            this.Load += new System.EventHandler(this.SalonDeClasesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

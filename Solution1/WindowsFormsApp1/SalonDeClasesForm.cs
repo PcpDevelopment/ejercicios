@@ -30,57 +30,51 @@ namespace WindowsFormsApp1
             listVEstud.View = View.Details;
         }
         private void btnAgregarEstudiantes_Click(object sender, EventArgs e)
-        {            
-
-            try
-            {
-                contador++;
+        {   
                 estudiantes = txtEstud.Text;
                 notas = txtNotasEst.Text;
 
-                if (!String.IsNullOrEmpty(estudiantes) && !String.IsNullOrEmpty(notas.ToString()))
+                if (!String.IsNullOrWhiteSpace(estudiantes) && !String.IsNullOrWhiteSpace(notas.ToString()))
                 {                   
                     int digitos;
 
                     if (int.TryParse(txtNotasEst.Text, out digitos))
-                    {
-                        
-                        oPromedioEstudiantes.llenarLista(estudiantes, digitos);
-                        suma = suma + int.Parse(notas);
-                        promedio = suma / contador;
-                        comparar.Add(new SalonDeClasesForm { estu = estudiantes, not = digitos });
-                        ListViewItem i = new ListViewItem(oPromedioEstudiantes.listaEstudiantes[0].nombreEstudiantes, 0);
+                    {    
+                    
+                        if(digitos >= 65 && digitos <= 100)
+                        {
+                            contador++;
+                            oPromedioEstudiantes.llenarLista(estudiantes, digitos);
+                            suma = suma + int.Parse(notas);
+                            promedio = suma / contador;
+                            comparar.Add(new SalonDeClasesForm { estu = estudiantes, not = digitos });
+                            ListViewItem i = new ListViewItem(oPromedioEstudiantes.listaEstudiantes[0].nombreEstudiantes, 0);
 
-                        i.SubItems.Add(oPromedioEstudiantes.listaEstudiantes[0].notasEstudiantes.ToString());
+                            i.SubItems.Add(oPromedioEstudiantes.listaEstudiantes[0].notasEstudiantes.ToString());
 
-                        listVEstud.Items.Add(i);
-                        oPromedioEstudiantes.listaEstudiantes.Clear();
-                        txtEstud.Clear();
-                        txtNotasEst.Clear();
-                        label1.Text = String.Format("{0:0.0 }", promedio);
+                            listVEstud.Items.Add(i);
+                            oPromedioEstudiantes.listaEstudiantes.Clear();
+                            txtEstud.Clear();
+                            txtNotasEst.Clear();
+                            label1.Text =  promedio.ToString();
+                        }
+                        else 
+                        {
+                            MessageBox.Show("solo se aceptan notas de: 65-100");
+                        } 
                     }
                     else
                     {
-                        MessageBox.Show("solo se pueden digitar numeros");
+                        MessageBox.Show("solo se pueden digitar numeros en la casilla de notas");
                     }
                 }
                 else
                 {
                     MessageBox.Show("hay campos vacios");
-                }                          
- 
-            }
-            catch(Exception o)
-            {
-               
-            }
-
-           
-
+                }            
         }
         private void listVEstud_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            
+        {            
             Int32 colIndex = Convert.ToInt32(e.Column.ToString());
             var enu = from num in comparar orderby num.not descending select num;
                 
@@ -97,7 +91,6 @@ namespace WindowsFormsApp1
                     listVEstud.Items.Add(yo);                    
                 }
             }
-
              var enus = from num in comparar orderby num.not ascending select num;
 
             if (listVEstud.Columns[colIndex].Text == "Ordenar▼")
@@ -110,20 +103,8 @@ namespace WindowsFormsApp1
 
                     yo.SubItems.Add(item.not.ToString());
                     listVEstud.Items.Add(yo);
-
                 }
             }
-
-        }
-
-        private void listVEstud_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SalonDeClasesForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        }       
     }
 }

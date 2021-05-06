@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
             // columnHeader2
             // 
             this.columnHeader2.Text = "Dia";
-            this.columnHeader2.Width = 80;
+            this.columnHeader2.Width = 100;
             // 
             // columnHeader3
             // 
@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Aqua;
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(12, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 81);
