@@ -17,13 +17,7 @@ namespace WindowsFormsApp1
         public GastosDelMesForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        }        
         private void GastosDelMesForm_Load(object sender, EventArgs e)
         {
             oGastosDelMes.llenarListaGastosMes(1, 500, "lunes");
@@ -50,16 +44,11 @@ namespace WindowsFormsApp1
                 lvGastos.Items.Add(item2);
             }
             oGastosDelMes.sumar();
-            label1.Text = oGastosDelMes.sumaDeTodo.ToString();
-            
-            
+            label1.Text = oGastosDelMes.sumaDeTodo.ToString();                        
         }
-
         private void lvGastos_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            
+        {            
             int colulmIn = Convert.ToInt32(e.Column.ToString());
-
 
             if(lvGastos.Columns[colulmIn].Text == "Fecha")
             {
@@ -71,9 +60,7 @@ namespace WindowsFormsApp1
                     item.SubItems.Add(item3.DiaDeLaSemana);
                     item.SubItems.Add(item3.gasto.ToString());
                     lvGastos.Items.Add(item);
-                }
-                
-
+                } 
             }
             if (lvGastos.Columns[colulmIn].Text == "Gastos")
             {
@@ -85,12 +72,8 @@ namespace WindowsFormsApp1
                     item.SubItems.Add(item3.DiaDeLaSemana);
                     item.SubItems.Add(item3.gasto.ToString());
                     lvGastos.Items.Add(item);
-
                 }
-
-
             }
-
 
         }
     }

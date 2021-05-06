@@ -39,8 +39,7 @@ namespace WindowsFormsApp1
                     int digitos;
 
                     if (int.TryParse(txtNotasEst.Text, out digitos))
-                    {    
-                    
+                    {                        
                         if(digitos >= 65 && digitos <= 100)
                         {
                             contador++;
@@ -91,6 +90,7 @@ namespace WindowsFormsApp1
                     listVEstud.Items.Add(yo);                    
                 }
             }
+
              var enus = from num in comparar orderby num.not ascending select num;
 
             if (listVEstud.Columns[colIndex].Text == "Ordenar▼")
@@ -102,6 +102,7 @@ namespace WindowsFormsApp1
                     ListViewItem yo = new ListViewItem(item.estu, 0);
 
                     yo.SubItems.Add(item.not.ToString());
+                    
                     listVEstud.Items.Add(yo);
                 }
             }
